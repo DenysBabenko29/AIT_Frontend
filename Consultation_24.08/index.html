@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="" method="get">
+    <label for="class1">Налоговый класс 1</label>
+    <input type="radio" name="tax-class" id="class1" value="1" required>
+    <label for="class2">Налоговый класс 2</label>
+    <input type="radio" name="tax-class" id="class2" value="2" checked>
+
+    <label for="family-1">Один ребенок</label>
+    <input type="radio" name="family-memebers" value="1" id="family-1" required checked>
+    <label for="family-2">Два ребенка</label>
+    <input type="radio" name="family-memebers" value="2" id="family-2" required>
+    <label for="family-3">Три ребенка</label>
+    <input type="radio" name="family-memebers" value="3" id="family-3" required>
+
+
+    <select name="pet" id="pet-input">
+        <!-- <option value="" disabled selected>pet</option> -->
+        <option value="" disabled selected label="pet"></option>
+        <option value="cat">cat</option>
+        <option value="dog">dog</option>
+      </select>
+
+
+    <input type="text" name="first-name" required>
+    <button type="submit">Отправить</button>
+  </form>
+</body>
+</html>

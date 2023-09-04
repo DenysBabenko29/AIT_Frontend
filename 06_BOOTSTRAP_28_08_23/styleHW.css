@@ -1,0 +1,37 @@
+.main{
+    margin-top: 10%;
+    margin-bottom: 0;
+    font-size: 50px;
+    text-align: center;
+    
+}
+p{
+    margin: 0;
+}
+
+.el{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.red{
+    background-color: red;
+}
+
+.orange{
+    background-color: orange;
+}
+
+.yellow{
+ background-color: yellow;
+}
+
+.green{
+background-color: green;
+}
+
+.blue{
+background-color: blue;
+}

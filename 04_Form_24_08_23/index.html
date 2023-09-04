@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./style.css">
+        <title>Form</title>
+    </head>
+    <body>
+       <div class="main">
+         <h1>Signup form</h1>
+        <div class="my_form">
+             <form action="/registration">
+                 <!-- <label for="name">Name:</label> -->
+                 <input
+                     type="text"
+                     placeholder="Enter your name"
+                     required
+                     id="name"
+                 />
+            
+                 <!-- <label for="email">Email:</label> -->
+                 <input
+                     type="email"
+                     placeholder="Enter your email"
+                     required
+                     id="email"
+                 />
+            
+                 <!-- <label for="phone">Phone</label> -->
+                 <small></small>
+                 <input 
+                 type="tel" 
+                 required
+                 placeholder="Enter your phone   "
+                 pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                 
+                 
+            
+                 <!-- <label for="password">Password:</label> -->
+                 <input
+                     type="password"
+                     placeholder="Enter your password"
+                     required
+                     id="password"
+                     minlength="8"
+                     maxlength="16"
+                 />
+            
+                 <!-- <label for="gender">Gender:</label> -->
+                 <select id="gender" required>
+                     <option value="" disabled selected>Select your gender</option>
+                     <option value="male">Male</option>
+                     <option value="female">Female</option>
+                 </select>
+            
+                 <!-- <label for="bio">BIO:</label> -->
+                 <textarea 
+                 id="bio" 
+                 maxlength="100"
+                 rows="5"
+                 cols="10"
+                 placeholder="Tell us about yourself"
+                 ></textarea>
+            
+                 <button type="submit">Submit</button>
+             </form>
+        </div>
+       </div>
+    </body>
+</html>
