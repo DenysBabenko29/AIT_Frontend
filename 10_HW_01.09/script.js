@@ -13,24 +13,31 @@
 
 
 const bankAccount = {
-    accountNumber: 123456789,
+    accountNumber: '123456789',
     accountHolderName: "Denys Babenko",
     balance: 100,
-    deposit: (n) => {
+    deposit: (n) => {  // если использовать стрелочную функцию то нельзя использовать this
+        if (n > 60000) {
+            console.log('Требуется подтверждение легальности доходов');
+            return false;
+        }
         if (n <= 0) {
             return false;
         }
         bankAccount.balance += n;
         return true;
     },
-    withdraw: (n) => {
-        if (n > bankAccount.balance || n <= 0) {
+    withdraw(n){
+        if (n > this.balance || n <= 0) {
+            console.log('Недостаточно средств на вашем счету или вы ввели отрицательную сумму');
             return false;
         }
-        bankAccount.balance -= n;
+        this.balance -= n;
         return true;
     },
-    checkBalance: () => console.log(bankAccount.balance)
+    checkBalance() {
+        console.log(this.balance)
+    } 
     
 };
 
