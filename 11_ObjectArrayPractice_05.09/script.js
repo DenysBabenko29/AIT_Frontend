@@ -44,16 +44,21 @@ function statsHandler() {
     li.textContent = `
         Quantity of position: ${shoppingCart.items.length},
         Total sum of all products : ${shoppingCart.totalCost},
-        Total quantity of all products : ${totalQuantityOfAllProducts(shoppingCart.items)},
+        Total quantity of all products : ${totalQuantityOfAllProducts(
+            shoppingCart.items
+        )},
         MaxPrice : ${shoppingCart.items[0].price},
         MinPrice : ${shoppingCart.items[shoppingCart.items.length - 1].price},
-        Avg : ${shoppingCart.totalCost / totalQuantityOfAllProducts(shoppingCart.items)},
+        Avg : ${
+            shoppingCart.totalCost /
+            totalQuantityOfAllProducts(shoppingCart.items)
+        },
         `;
     statsOur.appendChild(li);
 
-     function totalQuantityOfAllProducts(items){
-       return items.reduce((acc, item) =>  acc + item.quantity, 0);
-     } 
+    function totalQuantityOfAllProducts(items) {
+        return items.reduce((acc, item) => acc + item.quantity, 0);
+    }
 }
 
 function addHandler() {
