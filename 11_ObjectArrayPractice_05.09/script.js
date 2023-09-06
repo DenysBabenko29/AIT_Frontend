@@ -39,25 +39,34 @@ function statsHandler() {
     // Максимальная цена
     // Минимальная цена
     // Средняя цена
-    shoppingCart.items.sort();
-    const li = document.createElement("li");
-    li.textContent = `
-        Quantity of position: ${shoppingCart.items.length},
-        Total sum of all products : ${shoppingCart.totalCost},
-        Total quantity of all products : ${totalQuantityOfAllProducts(
-            shoppingCart.items
-        )},
-        MaxPrice : ${shoppingCart.items[0].price},
-        MinPrice : ${shoppingCart.items[shoppingCart.items.length - 1].price},
-        Avg : ${
-            shoppingCart.totalCost /
-            totalQuantityOfAllProducts(shoppingCart.items)
-        },
-        `;
-    statsOur.appendChild(li);
+    if (shoppingCart.items.length) {
+        const itemsQuantity = shoppingCart.items.length;
+        const sortByPrice = shoppingCart.items.sort();
+        const totalQuantityProduct = shoppingCart.items.reduce(
+            (acc, item) => acc + item.quantity,
+            0
+        );
+        const li = document.createElement("li");
+        let maxPrice = 0;
+        let minPrice = 0;
+        shoppingCart.items.forEach((e) => {
+            if (e.price > maxPrice) {
+                maxPrice = e.price;
+            }
+            if (e.price < minPrice) {
+                minPrice = e.price;
+            }
+        });
 
-    function totalQuantityOfAllProducts(items) {
-        return items.reduce((acc, item) => acc + item.quantity, 0);
+        li.textContent = `
+        Quantity of position: ${itemsQuantity},
+        Total sum of all products : ${shoppingCart.totalCost},
+        Total quantity of all products : ${totalQuantityProduct},
+        MaxPrice : ${maxPrice},
+        MinPrice : ${minPrice},
+        Avg : ${shoppingCart.totalCost / totalQuantityProduct},
+        `;
+        statsOur.appendChild(li);
     }
 }
 
