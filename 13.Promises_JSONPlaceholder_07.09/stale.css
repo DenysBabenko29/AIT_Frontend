@@ -1,0 +1,35 @@
+#userList {
+    width: 30%;
+    font-size: 24px;
+    margin-left: 5%;
+    
+}
+
+h1{
+    text-align: center;
+    margin-bottom: 5%;
+}
+li{
+    width: fit-content;
+    cursor: pointer;
+    &:hover{
+        color: rgb(189, 186, 184);
+    }
+}
+
+.main{
+    display: flex;
+}
+
+#userInfo{
+    display: flex;
+    flex-direction: column;
+   width: 40%;
+   list-style: none;
+   border-radius: 5px;
+   background-color: #f1f1f1;
+   text-align: center;
+   color: rgb(51, 65, 77);
+   font-size: 20px;
+}
+
