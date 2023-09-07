@@ -1,9 +1,9 @@
-let userData = [];
+const userData = [];
 fetch("https://jsonplaceholder.typicode.com/users")
     .then((res) => res.json())
     .then((users) => {
+        userData = users;
         users.forEach((user) => {
-            userData = users;
             // userList.innerHTML = `<li onclick="createUserInfo(this)">user.name</li>`
             const li = document.createElement("li");
             li.innerHTML = user.name;
