@@ -46,7 +46,7 @@ function statsHandler() {
             (acc, item) => acc + item.quantity,
             0
         );
-        const li = document.createElement("li");
+
         let maxPrice = 0;
         let minPrice = 0;
         shoppingCart.items.forEach((e) => {
@@ -58,33 +58,44 @@ function statsHandler() {
             }
         });
 
-        li.textContent = `
-        Quantity of position: ${itemsQuantity},
-        Total sum of all products : ${shoppingCart.totalCost},
-        Total quantity of all products : ${totalQuantityProduct},
-        MaxPrice : ${maxPrice},
-        MinPrice : ${minPrice},
-        Avg : ${shoppingCart.totalCost / totalQuantityProduct},
+        statsOur.innerHTML = `
+        <li>Quantity of position: ${itemsQuantity}</li>
+        <li>Total sum of all products : ${shoppingCart.totalCost}</li>
+        <li>Total quantity of all products : ${totalQuantityProduct}</li>
+        <li>MaxPrice : ${maxPrice}</li>
+        <li>MinPrice : ${minPrice}</li>
+        <li>Avg : ${shoppingCart.totalCost / totalQuantityProduct}</li>
         `;
-        statsOur.appendChild(li);
+    } else {
+        statsOur.innerHTML = "<p>The shopping cart is empty</p>";
     }
 }
 
 function addHandler() {
-    shoppingCart.addItem({
-        name: productName.value.trim(),
-        price: +price.value.trim(),
-        quantity: +quantity.value.trim(),
-    });
-    productList.innerHTML = "";
+    if (
+        productName.value.trim() &&
+        price.value.trim() &&
+        quantity.value.trim()
+    ) {
+        shoppingCart.addItem({
+            name: productName.value.trim(),
+            price: +price.value.trim(),
+            quantity: +quantity.value.trim(),
+        });
+        productList.innerHTML = "";
 
-    shoppingCart.items.forEach((e) => {
-        const li = document.createElement("li");
-        li.textContent = `
-        Product name : ${e.name},
-        Product price : ${e.price},
-        Product quantity : ${e.quantity}
-        `;
-        productList.appendChild(li);
-    });
+        shoppingCart.items.forEach((e) => {
+            const li = document.createElement("li");
+            li.textContent = `
+            Product name : ${e.name},
+            Product price : ${e.price},
+            Product quantity : ${e.quantity}
+            `;
+            productList.appendChild(li);
+
+            productName.value = '';
+            price.value = '';
+            quantity.value = '';
+        });
+    }
 }

@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+button {
+    margin-left: 15px;
+    padding: 5px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #308cb47e;
+    transition: all .5s ease;
+    &:hover {
+        background-color: #308cb4b8;
+        transform: scale(1.03);
+        font-size: 18px;
+    }
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+
+#taskList > li {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    list-style-type: none;
+    font-size: 22px;
+    color: #444;
+}
+
+.marker{
+    margin-right: 10px;
+    &:hover{
+        transform: scale(1.05);
+    }
+
+}
+
+.form-label{
+    width: 40%;
+    padding: 10px;
+    font-size: 24px;
+    border: 1px solid gainsboro;
+    border-radius: 5px;
+    background-color: #f8f7f7;
+    
+    &:focus {
+        border: 1px solid rgb(29, 177, 236);
+        outline: 5px solid #4ac2f67e;
+    }
+}
