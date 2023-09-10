@@ -27,7 +27,7 @@ li{
    width: 40%;
    list-style: none;
    border-radius: 5px;
-   background-color: #f1f1f1;
+   /* background-color: #f1f1f1; */
    text-align: center;
    color: rgb(51, 65, 77);
    font-size: 20px;
