@@ -1,30 +1,53 @@
 const BASE_URL = "https://jsonplaceholder.typicode.com";
+const users = [];
 
-printUsers();
-
-async function printUsers() {
+(async function printUsers() {
     try {
-        await fetch(`${BASE_URL}/users`)
-            .then((res) => res.json())
-            .then((users) => {
-                userData = users;
-                users.forEach((user) => {
-                    const li = document.createElement("li");
-                    li.innerHTML = user.name;
-                    li.addEventListener("click", () =>
-                        displayUserDetails(user)
-                    );
-                    userList.appendChild(li);
-                });
-            });
+        const res = await fetch(`${BASE_URL}/users`);
+        const users = await res.json();
+        users.forEach((user) => {
+            const li = document.createElement("li");
+            li.innerHTML = user.name;
+            li.addEventListener("click", () => displayUserDetails(user));
+            userList.appendChild(li);
+        });
+
+        // let filteredUsers = users;
+        // displaySearchUsers(users);
+
+        searchInput.addEventListener('input', () => {
+            const searchTerm = searchInput.value.toLowerCase();
+            let filteredUsers = users.filter(user => user.name.toLowerCase().includes(searchTerm))
+            displaySearchUsers(filteredUsers);
+        })
     } catch (error) {
         const li = document.createElement("li");
-        li.textContent = `Пользователь не найден ${error}`;
+        li.textContent = `Пользователь не найден ${error}`; 
         userList.appendChild(li);
     }
+})();
+
+function displaySearchUsers(users){
+    userList2.innerHTML = ""; 
+    users.forEach(user => {
+        const li = document.createElement('li');
+        li.innerText = user.name;
+        li.addEventListener('click', () => {
+            displayUserDetails(user); 
+        })
+        userList2.appendChild(li);
+
+    })
 }
 
-function displayUserDetails({name: firstName, email, phone, website, company: {name}, address : {street, city}}) {
+function displayUserDetails({
+    name: firstName,
+    email,
+    phone,
+    website,
+    company: { name },
+    address: { street, city },
+}) {
     userInfo.innerHTML = `
         <h2>${firstName}</h2>
         <p><strong>Email:</strong> ${email}</p>
