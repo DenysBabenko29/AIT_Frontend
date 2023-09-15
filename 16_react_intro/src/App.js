@@ -1,9 +1,9 @@
 import './App.css';
-import ComponentA from './components/ComponentA';
+import Counter from './components/Counter';
 
 function App() {
   return (
-    <ComponentA />
+    <Counter />
   );
 }
 
