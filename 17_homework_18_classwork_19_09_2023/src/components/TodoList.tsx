@@ -24,9 +24,11 @@ const TodoList: React.FC = (): JSX.Element => {
         setTaskList((prev) => [...prev, task]);
         setTask({ name: "", completed: false });
         taskInput.value = "";
+        
     };
 
     const handelIsDone = (e: ChangeEvent<HTMLInputElement>) => {
+        setCheck(check);
         setCheck(e.target.checked);
         const copy = [...taskList];
         const arr = copy.filter((task) => task.name === e.target.value);
