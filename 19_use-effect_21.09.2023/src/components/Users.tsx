@@ -17,11 +17,19 @@ const Users = () => {
         <>
             <h1>Users</h1>
             <ul>
-                {users.map(({id, name, username}) => (
-                        <li key={id} style={{border: "1px solid black", margin: "10px", padding: "10px", width: "30%"}}>
-                            <p>{name}</p>
-                            <p>{username}</p>
-                        </li>
+                {users.map(({ id, name, username }) => (
+                    <li
+                        key={id}
+                        style={{
+                            border: "1px solid black",
+                            margin: "10px",
+                            padding: "10px",
+                            width: "30%",
+                        }}
+                    >
+                        <p>{name}</p>
+                        <p>{username}</p>
+                    </li>
                 ))}
             </ul>
         </>
