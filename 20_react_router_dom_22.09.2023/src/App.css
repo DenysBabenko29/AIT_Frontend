@@ -1,0 +1,15 @@
+body{
+  margin-left: 40px;
+}
+
+.link{
+  text-decoration: none;
+  &:hover{
+    color: red
+  }
+}
+
+.li {
+  margin: 20px;
+}
+
