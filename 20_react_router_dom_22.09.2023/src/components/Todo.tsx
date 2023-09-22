@@ -18,7 +18,7 @@ const Todo = () => {
                         width: "30%",
                     }}
                 >
-                    <p>UsId: {userId}</p>
+                    <p>UserId: {userId}</p>
                     <p>Title: {title}</p>
                 </div>
             ))}
