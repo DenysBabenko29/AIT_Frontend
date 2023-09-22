@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 
-const Todos = () => {
-    const [todos, setTodos] = useState([]);
+const Todo = () => {
+    const [todo, setTodo] = useState([]);
     fetch("https://jsonplaceholder.typicode.com/todos")
         .then((res) => res.json())
-        .then((data) => setTodos(data));
+        .then((data) => setTodo(data));
 
     return (
         <div style={{ display: "flex", flexWrap: "wrap" }}>
-            {todos.map(({ id, userId, title }) => (
+            {todo.map(({ id, userId, title }) => (
                 <div
                     key={id}
                     style={{
@@ -26,4 +26,4 @@ const Todos = () => {
     );
 };
 
-export default Todos;
+export default Todo;

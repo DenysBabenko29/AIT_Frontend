@@ -6,7 +6,7 @@ import Layout from './components/Layout';
 import Users from './components/Users';
 import Comments from './components/Comments';
 import Posts from './components/Posts';
-import Todos from './components/Todos';
+import Todo from './components/Todo';
 
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
           <Route path='users' element={<Users />} />
           <Route path='comments' element={<Comments />} />
           <Route path='posts' element={<Posts />} />
-          <Route path='todos' element={<Todos />} />
+          <Route path='todo' element={<Todo />} />
         </Route>
       </Routes>
     </BrowserRouter>

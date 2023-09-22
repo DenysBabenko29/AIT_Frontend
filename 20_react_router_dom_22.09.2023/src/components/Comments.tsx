@@ -1,4 +1,3 @@
-import { wrap } from "module";
 import React, { useState } from "react";
 
 const Comments = () => {
@@ -12,7 +11,7 @@ const Comments = () => {
             {blogs.map(({ id, name, body, email }) => (
                 <div key={id} style={{ border: "1px solid black", margin: "10px", padding: "10px", width: "30%" }}>
                     <p>Пользователь: {name}</p>
-                    <p>Emyil: {email}</p>
+                    <p>Email: {email}</p>
                     <p>Comment: {body}</p>
                 </div>
             ))}
