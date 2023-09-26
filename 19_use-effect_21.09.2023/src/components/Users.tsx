@@ -35,7 +35,7 @@ const Users = () => {
     }, []);
     return (
         <>
-            <h1>Users</h1>
+            <h1 style={{ textAlign: "center" }}>Users</h1>
             <div style={{ display: "flex"}}>
                 <ul style={{ width: "30%" }}>
                     {users.map(({ id, name, username }) => (
@@ -66,7 +66,7 @@ const Users = () => {
                         position: "fixed",
                     } : {}}
                 >
-                    {result.username !== "" && (
+                    {result.username && (
                         <>
                             <p>Name: {result.name}</p>
                             <p>Username: {result.username}</p>
