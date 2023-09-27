@@ -2,7 +2,7 @@ import React from "react";
 import { friends } from "../utils";
 import Friend from "./Friend";
 
-const Section_R = (): JSX.Element => {
+const SectionR = (): JSX.Element => {
     return (
         <section className="right">
             <h2>Dream Team</h2>
@@ -13,4 +13,4 @@ const Section_R = (): JSX.Element => {
     );
 };
 
-export default Section_R;
+export default SectionR;
