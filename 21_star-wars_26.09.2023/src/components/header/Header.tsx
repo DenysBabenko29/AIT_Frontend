@@ -1,11 +1,13 @@
 import React from "react";
 import Navigation from "./Navigation";
 
-export default function Header() {
+const Header: React.FC<{changePage: (currentPage: string) => void}> = ({changePage}) =>  {
     return (
         <header>
-            <Navigation />
+            <Navigation changePage={changePage}/>
             <h1>Luke Skywalker</h1>
         </header>
     );
 }
+
+export default Header
