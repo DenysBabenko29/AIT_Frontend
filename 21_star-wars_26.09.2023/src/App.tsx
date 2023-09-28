@@ -9,7 +9,7 @@ export const PageContext = createContext((currentPage: string) => {});
 
 function App() {
   const [currentPage, setCurrentPage] = useState<string>(navItem[0]);
-  console.log(currentPage);
+  
 
   const changePage = (currentPage: string) => {
     setCurrentPage(currentPage);
@@ -19,7 +19,7 @@ function App() {
    <>
    <PageContext.Provider value={changePage}>
    <Header changePage={changePage} />
-   <Main />
+   <Main currentPage={currentPage}/>
    <Footer />
    </PageContext.Provider>
    </>

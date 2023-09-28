@@ -1,16 +1,25 @@
-import React from 'react'
-import SectionL from '../main/Section_L'
-import SectionR from '../main/Section_R'
-import Introduction from '../main/Introduction'
+import React from "react";
+import { navItem } from "../utils";
+import Home from "../Home";
+import AboutMe from "../AboutMe";
+import StarWars from "../StarWars";
+import Contacts from "../Contacts";
 
-const Main = () => {
-  return (
-    <>
-    <SectionL />
-    <SectionR />
-    <Introduction />
-    </>
-  )
-}
+const Main: React.FC<{ currentPage: string }> = ({
+    currentPage,
+}): JSX.Element => {
+    console.log(currentPage);
 
-export default Main
+    switch (currentPage) {
+        case navItem[1]:
+            return <AboutMe />;
+        case navItem[2]:
+            return <StarWars />;
+        case navItem[3]:
+            return <Contacts />;
+        default:
+            return <Home />;
+    }
+};
+
+export default Main;
