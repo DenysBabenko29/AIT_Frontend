@@ -1,3 +1,4 @@
-export default interface CounterState{
-    value: number;
+export default interface CounterState {
+  value: number;
+  text: string;
 }
