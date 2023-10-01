@@ -1,4 +1,6 @@
+type Ingredients = "Хлеб" | "Сыр" | "Колбаса"
+
 export type Action =
-    | { type: "addBread" }
-    | { type: "addSausage" }
-    | { type: "addCheese" };
+    | { type: "addIngredient", payload: Ingredients }
+    | { type: "clear" }
+

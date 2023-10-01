@@ -1,9 +1,9 @@
 import { createStore, combineReducers } from 'redux'
-import counterReducer from './counterReducer';
-import sandwichReduser from './sandwichReduser';
+import sandwichReducer from './reducer/sandwichReducer';
+import counterReducer from './reducer/counterReducer';
 export const store = createStore(combineReducers({
     counter: counterReducer,
-    sandwich: sandwichReduser
+    sandwich: sandwichReducer
 }));
 
 

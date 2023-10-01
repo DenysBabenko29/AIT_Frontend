@@ -1,5 +1,6 @@
-import { Action } from "./counter/types/Action";
-import { CounterState } from "./counter/types/CounterState";
+import { Action } from "../counter/types/Action";
+import { CounterState } from "../counter/types/CounterState";
+
 
 const initialState: CounterState = {
     value: 0,
