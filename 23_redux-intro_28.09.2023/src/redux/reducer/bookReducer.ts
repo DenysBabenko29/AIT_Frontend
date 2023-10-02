@@ -11,7 +11,7 @@ export function bookReducer(
 ): BookState {
     switch(action.type){
         case 'books/add' : 
-            return {...state, books: [...state.books, action.payload]}
+            return {books: [...state.books, action.payload]}
         case 'books/delete' : 
             return {...state, books: state.books.filter(x => x.isbn !== action.payload)}
         default: return state;

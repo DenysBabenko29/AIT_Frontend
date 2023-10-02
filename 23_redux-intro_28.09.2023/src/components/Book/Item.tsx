@@ -1,7 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 
-
 interface IProps {
     title: string;
     isbn: string;
@@ -17,21 +16,19 @@ const Item: React.FC<IProps> = ({
     author,
     index,
 }): JSX.Element => {
-
- 
-  const dispatch = useDispatch();
-  const deleteBook = (isbn: string): void => {
-      dispatch({ type: 'books/delete', payload : isbn})
+    const dispatch = useDispatch();
+    const deleteBook = (isbn: string): void => {
+        dispatch({ type: "books/delete", payload: isbn });
     };
 
     return (
         <>
-            <p key={index}>
+            <p className="book" key={index}>
                 ISBN: {isbn}, Title: {title}, Year: {year}, Author: {author}
+                <button className="btnDel" type="button" onClick={() => deleteBook(isbn)}>
+                    Delete
+                </button>
             </p>
-            <button type="button" onClick={() => deleteBook(isbn)}>
-                Delete
-            </button>
         </>
     );
 };

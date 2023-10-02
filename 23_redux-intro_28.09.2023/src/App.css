@@ -70,3 +70,12 @@ h2 {
   font-size: 2rem;
   text-align: center;
 }
+
+.btnDel {
+  margin-left: 3%;
+}
+
+.book {
+  margin-left: 3%;
+  font-size: 1.5rem;
+}
